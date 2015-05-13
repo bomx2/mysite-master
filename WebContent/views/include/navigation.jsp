@@ -14,5 +14,5 @@
 	</c:choose>
 	
 	<li><a href="/mysite/guestbook?a=list">방명록</a></li>
-	<li><a href="">게시판</a></li>
+	<li><a href="/mysite/views/board/boardtable.jsp">게시판</a></li>
 </ul>

@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+
+@import "mysite.css";
+
+body {
+	margin: 0;
+	padding: 0
+}
+
+#board {
+	padding: 10px;
+}
+
+table {
+	margin: 10px;
+	padding: 10px;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	padding: 10px 4px;
+	border-bottom: 1px solid #BDBDBD;
+	text-align: left;
+}
+
+td a {
+	color: #444;
+	text-decoration: none;
+	text-align: center;
+}
+
+td a, th a {
+	display: block;
+	width: 100%;
+}
+
+th {
+	text-align: center;
+}
+
+th a {
+	color: #6799FF;
+	text-decoration: none;
+	font-size: 1.1em;
+}
+
+thead tr {
+	color: #555;
+	font-size: 0.8em;
+}
+
+tr {
+	font: 12px sans-serif;
+	background: url(prettyinpink_row.png) repeat-x #F8F8F8;
+	color: #666;
+}

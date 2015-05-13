@@ -1,14 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="fn"%> 
-<%@ page import="com.sds.icto.mysite.vo.GuestBookVo"%>
-<%@ page import="com.sds.icto.mysite.dao.GuestBookDao"%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="java.util.List" %>
-<%
-	GuestBookDao dao = new GuestBookDao();
-	List<GuestBookVo> list = dao.fetchList();
-%>
+
 <!doctype html>
 <html>
 <head>
@@ -41,7 +35,7 @@
 				</form>
 				<ul>
 					<li>
-					<c:forEach items="${list }" var="vo" varStatus="status">
+					<c:forEach items="${requestScope.allList}" var="vo">
 						<table>
 							<tr>
 								<td>${vo.no}</td>

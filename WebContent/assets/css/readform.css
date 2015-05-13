@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+
+@import "mysite.css";
+
+body {
+	margin: 0;
+	padding: 0
+}
+
+#board {
+	padding: 10px;
+}
+
+table {
+	margin: 10px;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	padding: 10px 4px;
+	border-bottom: 1px solid #BDBDBD;
+}
+
+th {
+	text-align: center;
+	width:"20%";
+}
+
+td {
+	text-align: left;
+	background-color: #fff;
+}
+
+thead tr {
+	color: #555;
+	font-size: 0.8em;
+}
+
+tr {
+	font: 12px sans-serif;
+	background: url(prettyinpink_row.png) repeat-x #F8F8F8;
+	color: #666;
+}

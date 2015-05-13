@@ -29,7 +29,7 @@ public class GuestBookServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		try{	
+		try{
 			request.setCharacterEncoding( "utf-8" );
 			String a = request.getParameter( "a" );
 			
