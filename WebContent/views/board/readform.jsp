@@ -24,24 +24,26 @@
 			<h2>게시글</h2>
 			<div>
 			</div>
+			<c:forEach items="${requestScope.boardList}" var="vo">
 			<table>
 					<tr>
 						<th scope="col">No</th>
-						<td>데이터</td>
+						<td>${vo.boardno}</td>
 						<th scope="col">작성자</th>
-						<td>데이터</td>
+						<td>${vo.name}</td>
 					</tr>
 					<tr>
 						<th scope="col" colspan="1">제&nbsp;&nbsp;&nbsp;목</th>
-						<td colspan="3">데이터</td>
+						<td colspan="3">${vo.title}</td>
 					</tr>
 				<tbody>
 					<tr>
 						<th scope="col" colspan="1">내&nbsp;&nbsp;&nbsp;용</th>
-						<td colspan="3">데이터</td>
+						<td colspan="3">${vo.content}</td>
 					</tr>
 				</tbody>
 			</table>
+			</c:forEach>
 			<a href="/mysite/views/board/boardtable.jsp">
 			<button
 				class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
@@ -49,11 +51,13 @@
 				<span>L</span><span>i</span><span>s</span><span>t</span>
 			</button>
 			</a>
-			<button
-				class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
-				data-text="Delete">
-				<span>D</span><span>e</span><span>l</span><span>e</span><span>t</span><span>e</span>
-			</button>
+			<a href="/mysite/board?a=deleteform&boardno=${vo.boardno}">
+				<button
+					class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
+					data-text="Delete">
+					<span>D</span><span>e</span><span>l</span><span>e</span><span>t</span><span>e</span>
+				</button>
+			</a>
 			<button
 				class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
 				data-text="Update">

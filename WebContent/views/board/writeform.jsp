@@ -24,30 +24,34 @@
 			<h2>게시글 작성</h2>
 			<div>
 			</div>
+			<input type="hidden" value="${authMember.name}" id="name">
+			<input type="hidden" value="${authMember.password}" id="password">
 			<table>
 					<tr>
 						<th scope="col" width="30%">제&nbsp;&nbsp;&nbsp;목</th>
-						<td><input type="text" size="48"></td>
+						<td><input type="text" size="48" id="title"></td>
 					</tr>
 				<tbody>
 					<tr>
 						<th scope="col" width="30%">내&nbsp;&nbsp;&nbsp;용</th>
-						<td><textarea cols="50" rows="20"></textarea></td>
+						<td><textarea cols="50" rows="20" id="content"></textarea></td>
 					</tr>
 				</tbody>
 			</table>
-			<a href="/mysite/views/board/boardtable.jsp">
+			<a href="/mysite/board?a=list">
 			<button
 				class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
 				data-text="Cancel">
 				<span>C</span><span>a</span><span>n</span><span>c</span><span>e</span><span>l</span>
 			</button>
 			</a>
+			<a href="/mysite/board?a=insert">
 			<button
 				class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
 				data-text="Submit">
 				<span>S</span><span>u</span><span>b</span><span>m</span><span>i</span><span>t</span>
 			</button>
+			</a>
 		</div>
 		</div>
 		<div id="navigation">

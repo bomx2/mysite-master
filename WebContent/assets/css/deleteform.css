@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+@import "mysite.css";
+
+h3{
+	width: 230px;
+	margin-top:15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.delete-form {
+	height: 200px
+}
+
+.delete-form form {
+	width: 270px;
+	padding: 10px;
+	border: 1px solid #666;
+	border-radius: 10px;
+	margin: 50px auto;
+}
+
+.delete-form a {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80px
+}
+
+.delete-message p {
+	padding: 100px;
+	height: 50px;
+	text-align: center
+}
+
+textarea#content {
+	width: 100%;
+	border: none;
+	height: 100px;
+	resize: none;
+	outline: none;
+}

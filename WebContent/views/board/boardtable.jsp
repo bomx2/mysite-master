@@ -40,12 +40,14 @@
 					</tr>
 				</thead>
 				<tbody>
+			<c:forEach items="${requestScope.boardList}" var="vo">
 					<tr>
-						<td>데이터</td>
-						<td style="text-align: left;"><a href="/mysite/views/board/readform.jsp">데이터</a></td>
-						<td>데이터</td>
-						<td>데이터</td>
+						<td>${vo.boardno}</td>
+						<td style="text-align: left;"><a href="">${vo.title}</a></td>
+						<td>${vo.name}</td>
+						<td>${vo.date}</td>
 					</tr>
+			</c:forEach>
 				</tbody>
 			</table>
 		</div>
