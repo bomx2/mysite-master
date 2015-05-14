@@ -26,13 +26,15 @@
 							<td>비밀번호</td><td><input type="password" name="password"></td>
 						</tr>
 						<tr>
-							<td colspan=4><textarea name="message" id="message"></textarea></td>
+							<td colspan=4><textarea name="message" id="message" cols="70" rows="5"></textarea></td>
 						</tr>
 						<tr>
 							<td colspan=4 align=right><input type="submit" VALUE=" 확인 "></td>
 						</tr>
 					</table>
 				</form>
+				<br><br>
+				<h2>GuestBook List</h2>
 				<ul>
 					<li>
 					<c:forEach items="${requestScope.allList}" var="vo">
@@ -48,7 +50,7 @@
 							</tr>
 						</table>
 					</c:forEach>
-						<br>
+					<br>
 					</li>
 				</ul>
 			</div>
