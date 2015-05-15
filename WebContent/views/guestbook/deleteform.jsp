@@ -12,7 +12,6 @@
 <body>
 	<div id="container">
 		<div id="header">
-		<%--<jsp:include page = "/views/include/header.jsp" flush="false"/> --%>
 			<c:import url="/views/include/header.jsp"></c:import>
 		</div>
 		<div id="content">
@@ -20,7 +19,7 @@
 				<h3>정말로 방명록을 삭제하시겠습니까?</h3>
 				<form method="post" action="/mysite/guestbook">
 					<input type="hidden" name="a" value="delete">
-					<input type='hidden' name="no" value="<%=Integer.parseInt(request.getParameter("no")) %>">
+					<input type='hidden' name="no" value="${reading.no}">
 					<label>비밀번호</label>
 					<input type="password" name="password">
 					<input type="submit" value="확인">
@@ -29,11 +28,9 @@
 			</div>
 		</div>
 		<div id="navigation">
-		<%--<jsp:include page = "/views/include/navigation.jsp" flush = "false"/> --%>
 			<c:import url="/views/include/navigation.jsp"></c:import>
 		</div>
 		<div id="footer">
-		<%--<jsp:include page = "/views/include/footer.jsp" flush = "false"/> --%>
 			<c:import url="/views/include/footer.jsp"></c:import>
 		</div>
 	</div>

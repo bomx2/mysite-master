@@ -81,7 +81,7 @@ public class BoardDao {
 		List<BoardVo> list = new ArrayList<BoardVo>();
 		Connection conn = getConnection();
 		Statement stmt = conn.createStatement();
-		String sql = "select no, title, content, member_no,	member_name, to_char(sysdate,'yyyy-mm-dd'), password from board";
+		String sql = "select no, title, content, member_no,	member_name, to_char(sysdate,'yyyy-mm-dd'), password from board order by no desc";
 		ResultSet rs = stmt.executeQuery(sql);
 		while (rs.next()) {
 			int no = rs.getInt(1);

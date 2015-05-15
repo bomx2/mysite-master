@@ -12,7 +12,7 @@
 			<c:otherwise>
 				<li><a href="/mysite/member?a=uinfo">회원정보수정</a><li>
 				<li><a href="/mysite/member?a=logout">로그아웃</a><li>
-				<li>${authMember.name }님 안녕하세요 ^^;</li>
+				<li>${authMember.name }님 안녕하세요!</li>
 			</c:otherwise>
 		</c:choose>
 	</ul>

@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sds.icto.mysite.vo.BoardVo;
 import com.sds.icto.mysite.vo.GuestBookVo;
 
 public class GuestBookDao {
@@ -96,7 +97,7 @@ public class GuestBookDao {
 		// 2. statment 생성
 		Statement stmt = conn.createStatement();
 		// 3. SQL문 실행
-		String sql = "select no,name,password,message,to_char(sysdate,'yyyy-mm-dd') from guestbook";
+		String sql = "select no,name,password,message,to_char(sysdate,'yyyy-mm-dd') from guestbook order by no desc";
 		ResultSet rs = stmt.executeQuery(sql);
 		// 4. 결과 처리
 		while (rs.next()) {
@@ -124,6 +125,34 @@ public class GuestBookDao {
 			conn.close();
 		}
 		return list;
+	}
+	
+	public GuestBookVo read(int no) throws ClassNotFoundException, SQLException {
+		GuestBookVo g = null;
+		Connection conn = getConnection();
+		String sql = "select no,name,password,message,to_char(sysdate,'yyyy-mm-dd') from guestbook where no=?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, no);
+		ResultSet rs = pstmt.executeQuery();
+		
+		while (rs.next()) {
+			String name = rs.getString(2);
+			String password = rs.getString(3);
+			String message = rs.getString(4);
+			String date = rs.getString(5);
+			
+			g = new GuestBookVo(no, name, password, message, date);
+		}
+		if (rs != null) {
+			rs.close();
+		}
+		if (pstmt != null) {
+			pstmt.close();
+		}
+		if (conn != null) {
+			conn.close();
+		}
+		return g;
 	}
 
 }

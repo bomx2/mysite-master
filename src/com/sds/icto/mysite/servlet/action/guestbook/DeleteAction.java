@@ -28,9 +28,9 @@ public class DeleteAction implements Action {
 		
 		if(password.equals(vo.getPassword())){
 			dao.delete(no,password);
+			response.sendRedirect("/mysite/guestbook");
 		}
 
-		response.sendRedirect("/mysite/guestbook");
 	}
 
 }

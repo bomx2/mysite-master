@@ -16,12 +16,12 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<%-- <jsp:include page="/views/include/header.jsp" flush="false"/> --%>
 			<c:import url="/views/include/header.jsp"></c:import>
 		</div>
 		<div id="content">
 			<div id="board">
-			<h2>게시글</h2>
+			<h2>게시글 조회</h2>
+			<h4>|수정, 삭제는 로그인한 사용자에게만 지원됩니다.</h4>
 			<div>
 			</div>
 			<table>
@@ -40,35 +40,50 @@
 						<td colspan="3">${reading.content}</td>
 					</tr>
 			</table>
-			<a href="/mysite/board?a=list">
-			<button
-				class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
-				data-text="List">
-				<span>L</span><span>i</span><span>s</span><span>t</span>
-			</button>
-			</a>
-			<a href="/mysite/board?a=deleteform&no=${reading.no}">
+			
+			
+			<c:choose>
+			<c:when test="${empty authMember  }">
+				<a href="/mysite/board?a=list">
 				<button
 					class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
-					data-text="Delete">
-					<span>D</span><span>e</span><span>l</span><span>e</span><span>t</span><span>e</span>
+					data-text="List">
+					<span>L</span><span>i</span><span>s</span><span>t</span>
 				</button>
 			</a>
-			<a href="/mysite/board?a=updateform&no=${reading.no}">
-			<button
-				class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
-				data-text="Update">
-				<span>U</span><span>p</span><span>d</span><span>a</span><span>t</span><span>e</span>
-			</button>
-			</a>
+			</c:when>	
+			<c:otherwise>
+				<a href="/mysite/board?a=list">
+				<button
+					class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
+					data-text="List">
+					<span>L</span><span>i</span><span>s</span><span>t</span>
+				</button>
+				</a>
+				<a href="/mysite/board?a=deleteform&no=${reading.no}">
+					<button
+						class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
+						data-text="Delete">
+						<span>D</span><span>e</span><span>l</span><span>e</span><span>t</span><span>e</span>
+					</button>
+				</a>
+				<a href="/mysite/board?a=updateform&no=${reading.no}">
+				<button
+					class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
+					data-text="Update">
+					<span>U</span><span>p</span><span>d</span><span>a</span><span>t</span><span>e</span>
+				</button>
+				</a>
+			</c:otherwise>
+		</c:choose>
+			
+			
 		</div>
 		</div>
 		<div id="navigation">
-			<%-- <jsp:include page="/views/include/navigation.jsp"/> --%>
 			<c:import url="/views/include/navigation.jsp"></c:import>
 		</div>
 		<div id="footer">
-			<%-- <jsp:include page="/views/include/footer.jsp"/> --%>
 			<c:import url="/views/include/footer.jsp"></c:import>
 		</div>
 	</div>
