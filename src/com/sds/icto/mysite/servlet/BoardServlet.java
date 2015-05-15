@@ -8,17 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sds.icto.mysite.servlet.action.guestbook.DeleteAction;
-import com.sds.icto.mysite.servlet.action.guestbook.DeleteFormAction;
-import com.sds.icto.mysite.servlet.action.guestbook.InsertAction;
-import com.sds.icto.mysite.servlet.action.guestbook.ListAction;
+import com.sds.icto.mysite.servlet.action.board.BoardDeleteAction;
+import com.sds.icto.mysite.servlet.action.board.BoardDeleteFormAction;
+import com.sds.icto.mysite.servlet.action.board.BoardInsertAction;
+import com.sds.icto.mysite.servlet.action.board.BoardListAction;
+import com.sds.icto.mysite.servlet.action.board.BoardReadAction;
+import com.sds.icto.mysite.servlet.action.board.BoardUpdateAction;
 import com.sds.icto.web.Action;
 
-@WebServlet("/guestbook")
-public class GuestBookServlet extends HttpServlet {
+@WebServlet("/board")
+public class BoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public GuestBookServlet() {
+	public BoardServlet() {
 		super();
 	}
 
@@ -36,15 +38,19 @@ public class GuestBookServlet extends HttpServlet {
 			Action action = null;
 			
 			if( "insert".equals( a ) ) {
-				action = new InsertAction();
+				action = new BoardInsertAction();
 			} else if("deleteform".equals( a )) {
-				action = new DeleteFormAction();
+				action = new BoardDeleteFormAction();
 			} else if("delete".equals( a )) {
-				action = new DeleteAction();
+				action = new BoardDeleteAction();
 			} else if("list".equals( a ) ) {
-				action = new ListAction();
+				action = new BoardListAction();
+			} else if("read".equals( a ) ) {
+				action = new BoardReadAction();
+			} else if("update".equals( a ) ) {
+				action = new BoardUpdateAction();
 			} else{
-				action = new ListAction();
+				action = new BoardListAction();
 			}
 			action.execute(request, response);
 		} catch( Exception ex ) {

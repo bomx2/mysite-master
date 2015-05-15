@@ -34,17 +34,17 @@
 				<thead>
 					<tr>
 						<th scope="col" width="10%">No</th>
-						<th scope="col" width="60%">제&nbsp;&nbsp;&nbsp;목</th>
-						<th scope="col" width="20%">작성자</th>
-						<th scope="col" width="20%">작성일</th>
+						<th scope="col" width="40%">제&nbsp;&nbsp;&nbsp;목</th>
+						<th scope="col" width="30%">작성자</th>
+						<th scope="col" width="30%">작성일</th>
 					</tr>
 				</thead>
 				<tbody>
 			<c:forEach items="${requestScope.boardList}" var="vo">
 					<tr>
-						<td>${vo.boardno}</td>
-						<td style="text-align: left;"><a href="">${vo.title}</a></td>
-						<td>${vo.name}</td>
+						<td>${vo.no}</td>
+						<td style="text-align: left;"><a href="/mysite/board?a=read&no=${vo.no}">${vo.title}</a></td>
+						<td>${vo.member_name}</td>
 						<td>${vo.date}</td>
 					</tr>
 			</c:forEach>

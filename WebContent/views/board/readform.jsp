@@ -24,45 +24,43 @@
 			<h2>게시글</h2>
 			<div>
 			</div>
-			<c:forEach items="${requestScope.boardList}" var="vo">
 			<table>
 					<tr>
 						<th scope="col">No</th>
-						<td>${vo.boardno}</td>
+						<td>${reading.no}</td>
 						<th scope="col">작성자</th>
-						<td>${vo.name}</td>
+						<td>${reading.member_name}</td>
 					</tr>
 					<tr>
 						<th scope="col" colspan="1">제&nbsp;&nbsp;&nbsp;목</th>
-						<td colspan="3">${vo.title}</td>
+						<td colspan="3">${reading.title}</td>
 					</tr>
-				<tbody>
 					<tr>
 						<th scope="col" colspan="1">내&nbsp;&nbsp;&nbsp;용</th>
-						<td colspan="3">${vo.content}</td>
+						<td colspan="3">${reading.content}</td>
 					</tr>
-				</tbody>
 			</table>
-			</c:forEach>
-			<a href="/mysite/views/board/boardtable.jsp">
+			<a href="/mysite/board?a=list">
 			<button
 				class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
 				data-text="List">
 				<span>L</span><span>i</span><span>s</span><span>t</span>
 			</button>
 			</a>
-			<a href="/mysite/board?a=deleteform&boardno=${vo.boardno}">
+			<a href="/mysite/board?a=deleteform&no=${reading.no}">
 				<button
 					class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
 					data-text="Delete">
 					<span>D</span><span>e</span><span>l</span><span>e</span><span>t</span><span>e</span>
 				</button>
 			</a>
+			<a href="/mysite/board?a=update&no=${reading.no}">
 			<button
 				class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
 				data-text="Update">
 				<span>U</span><span>p</span><span>d</span><span>a</span><span>t</span><span>e</span>
 			</button>
+			</a>
 		</div>
 		</div>
 		<div id="navigation">
