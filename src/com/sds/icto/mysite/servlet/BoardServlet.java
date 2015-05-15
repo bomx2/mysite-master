@@ -14,6 +14,7 @@ import com.sds.icto.mysite.servlet.action.board.BoardInsertAction;
 import com.sds.icto.mysite.servlet.action.board.BoardListAction;
 import com.sds.icto.mysite.servlet.action.board.BoardReadAction;
 import com.sds.icto.mysite.servlet.action.board.BoardUpdateAction;
+import com.sds.icto.mysite.servlet.action.board.BoardUpdateFormAction;
 import com.sds.icto.web.Action;
 
 @WebServlet("/board")
@@ -47,6 +48,8 @@ public class BoardServlet extends HttpServlet {
 				action = new BoardListAction();
 			} else if("read".equals( a ) ) {
 				action = new BoardReadAction();
+			} else if("updateform".equals( a ) ) {
+				action = new BoardUpdateFormAction();
 			} else if("update".equals( a ) ) {
 				action = new BoardUpdateAction();
 			} else{

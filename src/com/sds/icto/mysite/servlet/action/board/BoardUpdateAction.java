@@ -17,14 +17,23 @@ public class BoardUpdateAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ClassNotFoundException, ServletException,
 			IOException {
-	
+		int no = Integer.parseInt(request.getParameter("no"));
+		String date = request.getParameter("date");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
+		String member_no = request.getParameter("member_no");
+		String member_name = request.getParameter("member_name");
+		String password = request.getParameter("password");
 		
 		BoardVo vo = new BoardVo();
+		vo.setNo(no);
+		vo.setDate(date);
 		vo.setTitle(title);
 		vo.setContent(content);
-
+		vo.setMember_no(member_no);
+		vo.setMember_name(member_name);
+		vo.setPassword(password);
+		
 		BoardDao dao = new BoardDao();
 		dao.update(vo);
 

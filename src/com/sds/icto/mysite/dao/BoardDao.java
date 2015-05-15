@@ -146,8 +146,8 @@ public class BoardDao {
 	
 	public void update(BoardVo b) throws ClassNotFoundException, SQLException {
 		Connection conn = getConnection();
-		PreparedStatement pstmt = null;
-		String sql = "update board set title=?, content=?, date=sysdate from board where no=?";
+		String sql = "update board set title=?, content=?, reg_date=sysdate where no=?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, b.getTitle());
 		pstmt.setString(2, b.getContent());
 		pstmt.setInt(3, b.getNo());

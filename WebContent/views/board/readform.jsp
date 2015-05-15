@@ -54,7 +54,7 @@
 					<span>D</span><span>e</span><span>l</span><span>e</span><span>t</span><span>e</span>
 				</button>
 			</a>
-			<a href="/mysite/board?a=update&no=${reading.no}">
+			<a href="/mysite/board?a=updateform&no=${reading.no}">
 			<button
 				class="button button--nina button--round-s button--text-thick button--inverted button--border-thin "
 				data-text="Update">
